@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Learning App</title>
+ {% load static %}
+  <link rel="stylesheet" href="{% static 'english.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body style="font-family: 'Bungee Spice', cursive;" class="p-4 bg-gradient-to-r from-orange-300 to-yellow-400 overflow-hidden">
+{% include 'navbar.html' %}
+<div class="fixed top-4 right-4 z-10">
+    <button class="bg-gray-500 w-12 h-12 flex items-center justify-center rounded-full text-white text-lg focus:outline-none" id="profile-icon">
+      👤
+    </button>
+  <div id="profile-dropdown" class="hidden bg-white rounded-lg shadow-lg w-48 py-2 mt-2 absolute right-0">
+      <ul>
+        <li class="px-4 py-2 text-gray-700">Name: John Doe</li>
+        <li class="px-4 py-2 text-gray-700">Role: </li>
+        <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="">Profile</a></li>
+        <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="">role:</a></li>
+        <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Body Content -->
+  <div class="flex justify-center items-center h-screen">
+    <div class="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card 1: Nationalities -->
+      <div class="relative bg-white rounded-lg shadow-lg p-6 hover-effect">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="bg-yellow-500 w-12 h-12 flex items-center justify-center rounded-full text-white text-lg">
+            🏳️
+          </div>
+          <span class="font-bold text-orange-700">Nationalities</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-gray-500">3/3</span>
+
+        </div>
+         <div id="dropdown-1" class="bg-white rounded-lg shadow-lg w-full py-2 mt-2">
+          <ul>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"  ><a href="{% url 'n_bl_1' %}">Level 1</a></li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'n_ml_2' %}">Level 2</a></li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'n_al_3' %}">Level 3</a> </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2: Profession -->
+      <div class="relative bg-white rounded-lg shadow-lg p-6 hover-effect">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="bg-orange-400 w-12 h-12 flex items-center justify-center rounded-full text-white text-lg">
+            👔
+          </div>
+          <span class="font-bold text-orange-700">Profession</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-gray-500">3/3</span>
+
+        </div>
+        <!-- Dropdown Menu (hidden by default) -->
+        <div id="dropdown-2" class=" bg-white rounded-lg shadow-lg w-full py-2 mt-2">
+          <ul>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'prf_bl_1' %}">Level 1 </a></li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'prf_ml_2' %}">level 2</a></li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'prf_al_3' %}"> level 3 </a> </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 3: People -->
+      <div class="relative bg-white rounded-lg shadow-lg p-6 hover-effect">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="bg-orange-600 w-12 h-12 flex items-center justify-center rounded-full text-white text-lg">
+            👨‍👩‍👧‍👦
+          </div>
+          <span class="font-bold text-orange-700">People</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-gray-500">3/3</span>
+
+        </div>
+        <!-- Dropdown Menu (hidden by default) -->
+        <div id="dropdown-3" class="bg-white rounded-lg shadow-lg w-full py-2 mt-2">
+          <ul>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'ppl_bl_1' %}">Level 1</a> </li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'ppl_ml_2' %}"> Level 2</a></li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"> <a href="{% url 'ppl_al_3' %}">level 3</a> </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- More Cards... -->
+      <div class="relative bg-white rounded-lg shadow-lg p-6 hover-effect">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="bg-blue-500 w-12 h-12 flex items-center justify-center rounded-full text-white text-lg">
+            🗺️
+          </div>
+          <span class="font-bold text-orange-700">Places</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-gray-500">3/3</span>
+          <!-- Dropdown Button -->
+
+        </div>
+        <!-- Dropdown Menu (hidden by default) -->
+        <div id="dropdown-5" class=" bg-white rounded-lg shadow-lg w-full py-2 mt-2">
+          <ul>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'plc_bl_1' %}"> Level 1 </a> </li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'plc_ml_2' %}">Level 2 </a> </li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'plc_al_3' %}">Level 3</a> </li>
+          </ul>
+        </div>
+      </div>
+      <div class="relative bg-white rounded-lg shadow-lg p-6 hover-effect">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="bg-red-500 w-12 h-12 flex items-center justify-center rounded-full text-white text-lg">
+            🍔
+          </div>
+          <span class="font-bold text-orange-700">Food</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-gray-500">3/3</span>
+
+        </div>
+         <div id="dropdown-6" class="bg-white rounded-lg shadow-lg w-full py-2 mt-2">
+          <ul>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'fod_bl_1' %}">Level 1</a></li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'fod_ml_2' %}">Level 2</a></li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'fod_al_3' %}">Level 3</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="relative bg-white rounded-lg shadow-lg p-6 hover-effect">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="bg-purple-500 w-12 h-12 flex items-center justify-center rounded-full text-white text-lg">
+            🎨
+          </div>
+          <span class="font-bold text-orange-700">Colors</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-gray-500">3/3</span>
+
+        </div>
+         <div id="dropdown-7" class="bg-white rounded-lg shadow-lg w-full py-2 mt-2">
+          <ul>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'clr_bl_1' %}">Level 1</a></li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'clr_ml_2' %}">Level 2</a></li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'clr_al_3' %}">Level 3</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="relative bg-white rounded-lg shadow-lg p-6 hover-effect">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="bg-blue-700 w-12 h-12 flex items-center justify-center rounded-full text-white text-lg">
+            🌦️
+          </div>
+          <span class="font-bold text-orange-700">Weather</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-gray-500">3/3</span>
+
+        </div>
+         <div id="dropdown-8" class="bg-white rounded-lg shadow-lg w-full py-2 mt-2">
+          <ul>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'wth_bl_1' %}">Level 1</a></li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'wth_ml_2' %}">Level 2</a></li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'wth_al_3' %}">Level 3</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="relative bg-white rounded-lg shadow-lg p-6 hover-effect">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="bg-gray-500 w-12 h-12 flex items-center justify-center rounded-full text-white text-lg">
+            💻
+          </div>
+          <span class="font-bold text-orange-700">Technology</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-gray-500">3/3</span>
+
+        </div>
+         <div id="dropdown-9" class=" bg-white rounded-lg shadow-lg w-full py-2 mt-2">
+          <ul>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'tec_bl_1' %}">Level 1</a></li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'tec_ml_2' %}">Level 2</a></li>
+            <li class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"><a href="{% url 'tec_al_3' %}">Level 3</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+
+</body>
+</html>

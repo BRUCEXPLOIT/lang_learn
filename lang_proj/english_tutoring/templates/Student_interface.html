@@ -1,0 +1,297 @@
+<!-- templates/find_tutors.html -->
+{% extends 'base.html' %}
+
+{% block title %}Find Tutors - Polyglot{% endblock %}
+
+{% block content %}
+{% load static %}
+  <!-- Header Text for Tutor Section -->
+  <div class="text-center mb-8">
+    <h1 class="text-3xl font-bold text-gray-800">
+      Connect with the Best Tutors Across the Globe
+    </h1>
+    <p class="text-lg text-gray-600 mt-2">Find your perfect language tutor from anywhere in the world and start learning today!</p>
+  </div>
+
+  <!-- Tutor Cards Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4 bg-gradient-to-r from-yellow-300 text-orange-700">
+    <!-- Tutor Cards -->
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+      <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+      <div class="flex-1">
+        <h2 class="text-lg font-bold text-gray-800">John Doe</h2>
+        <p class="text-sm text-gray-500">English Tutor</p>
+        <div class="mt-2 flex gap-2">
+          <button data-user-name="John Doe" data-user-id="123" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+            <i class="fab fa-linkedin"></i> Connect
+          </button>
+          <button data-user-id="1" data-user-name="John Doe" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+            Send Message
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat the cards for other tutors -->
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+      <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+      <div class="flex-1">
+        <h2 class="text-lg font-bold text-gray-800">Jane Smith</h2>
+        <p class="text-sm text-gray-500">English Tutor</p>
+        <div class="mt-2 flex gap-2">
+          <button data-user-id="124" data-user-name="Jane Smith" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+            <i class="fab fa-linkedin"></i> Connect
+          </button>
+          <button data-user-id="2" data-user-name="Jane Smith" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+            Send Message
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">Emily Davis</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-name="Emily Davis" data-user-id="125" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="3" data-user-name="Emily Davis" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">Emily </h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-id="126" data-user-name="Emily" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="4" data-user-name="Emily" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">mike</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-name="mike" data-user-id="127" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="5" data-user-name="mike" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">john</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-id="128" data-user-name="john" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="6" data-user-name="john" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">andrew</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-name="andrew" data-user-id="129" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="7" data-user-name="andrew" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">alex</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-id="130" data-user-name="alex" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="7" data-user-name="alex" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">walter</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-name="walter" data-user-id="131" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="8" data-user-name="walter" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">bruce</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-name="bruce" data-user-id="132" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="9" data-user-name="bruce" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">doakes</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-id="133" data-user-name="doakes" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="10" data-user-name="doakes" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">brain</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-name="brain" data-user-id="134" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="11" data-user-name="brain" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">dexter</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-name="dexter" data-user-id="135" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="12" data-user-name="dexter" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">wayne</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-name="wayne" data-user-id="136" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="13" data-user-name="wayne" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">wilson</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-name="wilson" data-user-id="137" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="14" data-user-name="wilson" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">Elliot</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-name="Elliot" data-user-id="138" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="15" data-user-name="Elliot" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-gray-800">tyler</h2>
+          <p class="text-sm text-gray-500">English Tutor</p>
+          <div class="mt-2 flex gap-2">
+            <button data-user-id="139" data-user-name="tyler" class="connect-btn bg-blue-700 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2">
+              <i class="fab fa-linkedin"></i> Connect
+            </button>
+            <button data-user-id="16" data-user-name="tyler" class="send-message-btn bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg shadow-md">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+     <div class="bg-white shadow-lg rounded-lg p-4 flex items-center gap-4 active:bg-black active:text-white transition duration-300">
+        <img src="https://via.placeholder.com/100" alt="User Avatar" class="w-20 h-20 rounded-full" />
+        <div class="flex-1">
+          <h2 class=
+ </body>
+</html>

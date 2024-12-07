@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Learning App</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Hover Movement and Shadow */
+    .hover-effect:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Default Transition for Smoothness */
+    .hover-effect {
+      transition: transform 0.3s ease;
+    }
+
+    /* Animation for moving images */
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .animate-scroll {
+      animation: scroll 20s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
+
+    /* Popup background overlay */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 50;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Popup content */
+    .popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 400px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Form styles */
+    .popup-content input {
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body style="font-family: 'Bungee Spice', cursive;" class="bg-[url('{% static 'images/world-map.png' %}')] bg-no-repeat bg-cover bg-[center_-60%] h-screen bg-yellow-600 ">
+
+  <!-- Navigation Bar -->
+  <nav class="p-4 bg-gradient-to-r from-orange-300 to-yellow-400 fixed top-0 left-0 w-full z-10">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Left: Logo -->
+    <div class="text-white text-4xl font-bold pr-6">
+        polyglot
+    </div>
+
+    <!-- Center: Navigation Links -->
+    <div class="space-x-40">
+        <a href="#" class="text-2xl text-white hover:text-gray-800">About Us</a>
+        <a href="#" class="text-2xl text-white hover:text-gray-800">Contacts</a>
+        <a href="#" class="text-2xl text-white hover:text-gray-800">Reviews</a>
+    </div>
+
+    <!-- Right: Login and Signup Buttons -->
+    <div class="flex justify-between flex-row space-x-10">
+        <!-- Sign Up Button -->
+        <button id="signupBtn" class="bg-black text-white px-6 py-2 rounded-full hover:bg-white transition duration-200">
+          <a href ="{% url 'sign_log' %}">
+            get started
+          </a>
+         </button>
+
+        <!-- Login Button -->
+
+    </div>
+  </div>
+</nav>
+  <!-- Centered Language Selector Box -->
+  <div class="flex items-center justify-center h-full">
+    <!-- Card with Hover Shadow Effect -->
+    <div class="p-8 rounded-lg shadow-lg bg-gradient-to-r from-orange-300 to-yellow-400 text-white w-96 text-center hover-effect">
+      <!-- Title -->
+      <h1 class="text-3xl font-bold mb-6">Select Your Preferred Language</h1>
+
+      <!-- Language Dropdown -->
+      <form>
+        <label for="language" class="block text-lg mb-2">Choose Language</label>
+        <select id="language" name="language" class="w-full px-4 py-2 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-400">
+          <option value="english" >English</option>
+          <option value="spanish">Spanish</option>
+          <option value="japanese">Japanese</option>
+          <option value="french">French</option>
+        </select>
+
+        <!-- Submit Button -->
+        <button type="submit" class="mt-6 w-full bg-black text-white py-2 rounded-lg hover:bg-white transition duration-200">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Moving Banner Section -->
+<!-- Moving Banner Section -->
+<div class="relative overflow-hidden bg-yellow-600 h-40 my-12">
+  <div class="flex animate-scroll space-x-8">
+    <img src="{% static 'images/R.png' %}" alt="Image 1" class="h-40 w-56 object-cover">
+    <img src="{% static 'images/OIP.jpg' %}" alt="Image 2" class="h-40 w-56 object-cover">
+    <img src="{% static 'images/Flag_of_Japan.svg.webp' %}" alt="Image 3" class="h-40 w-56 object-cover">
+    <img src="{% static 'images/Flag_of_France.png' %}" alt="Image 4" class="h-40 w-56 object-cover">
+    <img src="{% static 'images/Flag_of_South_Korea.svg.webp' %}" alt="Image 5" class="h-40 w-56 object-cover">
+    <!-- Repeat images for seamless scrolling -->
+    <img src="{% static 'images/OIP (1).jpg' %}" alt="Image 1" class="h-40 w-56 object-cover">
+    <img src="{% static 'images/R (1).png' %}" alt="Image 2" class="h-40 w-56 object-cover">
+    <img src="{% static 'images/R.jpg' %}" alt="Image 2" class="h-40 w-56 object-cover">
+    <img src="{% static 'images/saudi-arabia-national-flag-illustration-editable-image-vector.jpg' %}" alt="Image 2" class="h-40 w-56 object-cover">
+  </div>
+</div>
+
+
+
+
+
+  <!-- Contact Details Section -->
+  <div class="bg-black py-12">
+    <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Contact Details</h2>
+    <p class="text-lg leading-relaxed max-w-4xl mx-auto text-center text-gray-700">
+      Got questions? Reach out to us via email at <a href="mailto:support@polyglot.com" class="text-blue-500 underline">support@polyglot.com</a>, or call us at +1-234-567-890.
+    </p>
+  </div>
+
+  <!-- Reviews Section -->
+   <!-- Reviews Section -->
+<div class="bg-white py-12">
+  <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Reviews</h2>
+  <p class="text-lg leading-relaxed max-w-4xl mx-auto text-center text-gray-700">
+    Here's what our users have to say about Polyglot:
+  </p>
+
+  <!-- Horizontal Scroll Container with Moving Effect -->
+  <div class="mt-6 overflow-hidden relative">
+    <!-- Flex Container for Reviews Cards with Animation -->
+    <div class="flex animate-marquee space-x-8">
+      <!-- Review 1 Card -->
+      <div class="flex-none w-80 p-4 bg-gray-100 rounded-lg shadow-md">
+        <p class="text-lg text-gray-800">"Polyglot made learning Japanese so easy and fun!"</p>
+        <p class="text-sm text-gray-600 text-right">- User A</p>
+      </div>
+
+      <!-- Review 2 Card -->
+      <div class="flex-none w-80 p-4 bg-gray-100 rounded-lg shadow-md">
+        <p class="text-lg text-gray-800">"The best app for language learners. Highly recommended!"</p>
+        <p class="text-sm text-gray-600 text-right">- User B</p>
+      </div>
+
+      <!-- Review 3 Card -->
+      <div class="flex-none w-80 p-4 bg-gray-100 rounded-lg shadow-md">
+        <p class="text-lg text-gray-800">"I love how easy it is to navigate through different languages!"</p>
+        <p class="text-sm text-gray-600 text-right">- User C</p>
+      </div>
+
+      <!-- Review 4 Card -->
+      <div class="flex-none w-80 p-4 bg-gray-100 rounded-lg shadow-md">
+        <p class="text-lg text-gray-800">"Amazing platform for language enthusiasts!"</p>
+        <p class="text-sm text-gray-600 text-right">- User D</p>
+      </div>
+
+      <!-- Review 5 Card -->
+      <div class="flex-none w-80 p-4 bg-gray-100 rounded-lg shadow-md">
+        <p class="text-lg text-gray-800">"A fantastic tool for anyone learning a new language!"</p>
+        <p class="text-sm text-gray-600 text-right">- User E</p>
+      </div>
+
+      <!-- Repeat reviews for seamless scrolling -->
+      <div class="flex-none w-80 p-4 bg-gray-100 rounded-lg shadow-md">
+        <p class="text-lg text-gray-800">"Polyglot made learning Japanese so easy and fun!"</p>
+        <p class="text-sm text-gray-600 text-right">- User A</p>
+      </div>
+
+      <div class="flex-none w-80 p-4 bg-gray-100 rounded-lg shadow-md">
+        <p class="text-lg text-gray-800">"The best app for language learners. Highly recommended!"</p>
+        <p class="text-sm text-gray-600 text-right">- User B</p>
+      </div>
+
+      <div class="flex-none w-80 p-4 bg-gray-100 rounded-lg shadow-md">
+        <p class="text-lg text-gray-800">"I love how easy it is to navigate through different languages!"</p>
+        <p class="text-sm text-gray-600 text-right">- User C</p>
+      </div>
+
+      <div class="flex-none w-80 p-4 bg-gray-100 rounded-lg shadow-md">
+        <p class="text-lg text-gray-800">"Amazing platform for language enthusiasts!"</p>
+        <p class="text-sm text-gray-600 text-right">- User D</p>
+      </div>
+
+      <div class="flex-none w-80 p-4 bg-gray-100 rounded-lg shadow-md">
+        <p class="text-lg text-gray-800">"A fantastic tool for anyone learning a new language!"</p>
+        <p class="text-sm text-gray-600 text-right">- User E</p>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- About Us Section -->
+ <div class="bg-black py-12">
+  <h2 class="text-3xl font-bold text-center mb-6 text-white">About Us</h2>
+  <p class="text-lg leading-relaxed max-w-4xl mx-auto text-center text-white">
+    Welcome to Polyglot, your ultimate destination for language learning. Our mission is to connect language enthusiasts from around the globe and provide tools to enhance learning. Whether you're starting with the basics or aiming to master a new tongue, Polyglot has everything you need to succeed.
+  </p>
+</div>
+
+
+</body>
+</html>

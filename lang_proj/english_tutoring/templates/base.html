@@ -1,0 +1,55 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+
+  <title>{% block title %}Polyglot{% endblock %}</title>
+
+   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body style="font-family: 'Bungee Spice', cursive;" class="p-4 bg-gradient-to-r from-orange-300 via-gray-100 to-yellow-400 overflow-hidden">
+
+  <!-- Navbar Section -->
+  <nav class="p-4 bg-gradient-to-r from-orange-300 via-gray-100 to-yellow-400 fixed top-0 left-0 h-full z-10">
+    <div class="max-w-7xl mx-auto flex items-start justify-start flex-col h-full">
+      <div class="flex flex-col mt-8">
+        <!-- Profile Icon -->
+        <img id="profile-icon" src="https://via.placeholder.com/80" alt="Profile Icon" class="w-20 h-20 rounded-full mb-4" />
+        <!-- Title Text -->
+        <div class="text-white text-4xl font-bold text-center mt-12 mb-6">Polyglot</div>
+      </div>
+      <div class="flex flex-col items-center mt-12 gap-12">
+        <button class="px-6 py-2 bg-white text-white rounded-lg text-lg shadow-md hover:bg-black w-3/4">
+          Learning Path
+        </button>
+        <button class="px-6 py-2 bg-white text-white rounded-lg text-lg shadow-md hover:bg-black w-3/4">
+          Find Tutors
+        </button>
+        <button class="px-6 py-2 bg-white text-white rounded-lg text-lg shadow-md hover:bg-black w-3/4">
+          Chat with a Tutor
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Section -->
+  <div class="ml-64 mt-12">
+    {% block content %}
+    <!-- Page-specific content will be inserted here -->
+    {% endblock %}
+  </div>
+
+  <script src="{% static 'chat_js/popup_msg.js' %}"></script>
+
+  <script src="{% static 'chat_js/stud_notify.js' %}"></script>
+
+
+</body>
+</html>
